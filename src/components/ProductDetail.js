@@ -16,10 +16,11 @@ function ProductDetail(props) {
           </p>
         </div>
         <div className="ratings">
-          <p className="pull-right"><Reviews reviews={reviews} /></p>
-          <p>
-            <Stars starRating={rating} />
-          </p>
+        <span>
+          <Stars starRating={rating} />
+        </span>
+          <p> <Reviews reviews={reviews} /> </p>
+
         </div>
       </div>
     </div>

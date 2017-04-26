@@ -6,9 +6,9 @@ function Stars(props) {
     starArr.push(<span className="glyphicon glyphicon-star" />);
   }
   return (
-    <div>
+    <p>
       {starArr}
-    </div>
+    </p>
   );
 
 }

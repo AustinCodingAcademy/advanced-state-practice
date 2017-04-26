@@ -36,6 +36,7 @@ class Reviews extends React.Component {
         }
       }>  {reviewArr.length} {reviewArr.length > 1 ? "Reviews" : "Review"}</i>
       </span>
+
       {reviewDivs}
 
     </div>
