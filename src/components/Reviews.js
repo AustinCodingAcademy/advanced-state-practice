@@ -4,51 +4,59 @@ class Reviews extends React.Component {
   constructor (props) {
     super();
     this.state ={
-      visible:false;
-    }
+      visible:false,
+    };
 
   }
 render(){
-  var reviewDiv="";
-  var reviewTag;
-  if(this.props.product.reviews > 1) {
-    reviewTag="Reviews"
+  function fillStars(value){
+    var arr=[];
+    for (var i=0; i<value; i++){
+      arr.push(<span className="glyphicon glyphicon-star"></span>)
+    }
+    return arr;
+  };
+  let reviewState = this.props.products;
+  let reviewDiv="";
+  let reviewTag;
+  if(reviewState.length > 1) {
+    reviewTag="Reviews";
   }
   else{
     reviewTag="Review"
   }
-  return reviewTag;
-  }
-  if(this.state.visible){
-    reviewDiv=this.props.product.reviews.map(function(type, index){
-      return
-      <div>
-        {type.description}
-        <br/>
-        {type.rating}
-        <br/>
-        <br/>
 
+
+  if(this.state.visible){
+    reviewDiv=reviewState.map(function(type, index){
+      return(
+      <div>
+
+<hr />
+        <p  key={index}>{type.description}</p><p>{fillStars(type.rating)} </p>
 
       </div>
-
+);
     })
   }
   else{
     reviewDiv="";
   }
-const {reviews} = props.product;
-  return(
 
+  return(
+    <div>
     <a onClick={(e)=>{
       this.setState({
         visible:!this.state.visible
       });
-    }}{reviewDiv} </a>
+    }}>{reviewTag}</a>
+{reviewDiv}
+
+    </div>
   );
 
 }
-
 }
 
-export default Reviews
+
+export default Reviews;
