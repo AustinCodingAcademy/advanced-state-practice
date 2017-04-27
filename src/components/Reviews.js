@@ -18,8 +18,9 @@ class Reviews extends React.Component {
 
       reviewDivs = reviewArr.map(function (review, index) {
       return <div>
-      <p className="pull-right"><Stars starRating={review.rating} /></p>
       <p key={index}>{review.description}</p>
+      <p><Stars starRating={review.rating} /></p>
+
       </div>})
     }
       else{
