@@ -1,11 +1,9 @@
 import React from "react";
+import Reviews from "./Reviews";
+import Stars from "./Stars";
 
 function ProductDetail(props) {
-  const {name,description,rating,imgUrl} = props.product;
-  const stars = [];
-  for (let i = 0; i < rating; i++) {
-    stars.push(<span className="glyphicon glyphicon-star" />);
-  }
+  const {name,description,rating,imgUrl,reviews} = props.product;
 
   return (
     <div className="col-sm-4 col-lg-4 col-md-4">
@@ -14,14 +12,15 @@ function ProductDetail(props) {
         <div className="caption">
           <h4><a href="#">{name}</a>
           </h4>
-          <p>{description} 
+          <p>{description}
           </p>
         </div>
         <div className="ratings">
-          <p className="pull-right">15 reviews</p>
-          <p>
-            {stars}
-          </p>
+        <span>
+          <Stars starRating={rating} />
+        </span>
+          <p> <Reviews reviews={reviews} /> </p>
+
         </div>
       </div>
     </div>
