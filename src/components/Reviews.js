@@ -1,15 +1,55 @@
 import React from "react";
-import state from "../state.js";
 
 class Reviews extends React.Component {
-  constructor(props) {
-    super(props);
-       //this.state =  {visible:true};
+  constructor (props) {
+    super();
+    this.state ={
+      visible:false,
+    };
+  }
+  render(){
+  function fillStars(value){
+    var arr=[];
+    for (let i=0; i<value; i++){
+      arr.push(<span className="glyphicon glyphicon-star"></span>)
+    }
+    return arr;
+  };
+    const reviewState = this.props.products;
+    let reviewDiv= "";
+    let reviewTag;
+  if( reviewState.length > 1) {
+    reviewTag= "Reviews";
+  }
+  else {
+    reviewTag="Review"
+  }
+  if (this.state.visible){
+    reviewDiv=  reviewState.map(function(type, index) {
+      return(
+      <div>
 
 
+        <p key={index}>{type.description}</p> <p>{fillStars(type.rating)} </p>
+
+      </div>
+);
+    })
   }
-  render() {
-    return <div>{this.props.reviews} </div>;
+  else{
+    reviewDiv="";
   }
+  return(
+    <div>
+    <a onClick={(e)=>{
+      this.setState({
+        visible:!this.state.visible
+      });
+    }}>{reviewTag}</a>
+{reviewDiv}
+
+    </div>
+  );
+}
 }
 export default Reviews;
