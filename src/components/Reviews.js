@@ -12,7 +12,7 @@ class Reviews extends Component {
   }
 
   showReviewDetails() {
-    this.state.reviewDetails.map((each, index) => {
+    return this.state.reviewDetails.map((each, index) => {
       return (
         <p key={index}>
           {each.description}
@@ -21,16 +21,13 @@ class Reviews extends Component {
     });
   }
 
-  countReviews() {
+  render() {
+    console.log(this.showReviewDetails());
     if (this.state.reviews <= 1) {
       this.setState({
         reviewText: "Review"
       });
     }
-  }
-
-  render() {
-    this.countReviews();
     return (
       <div onClick={this.props.toggleReviews}>
         {this.state.reviews} {this.state.reviewText}
