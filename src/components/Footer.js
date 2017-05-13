@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function Footer(){
-     return (    
+     return (
      <div className="container">
         <hr/>
         <footer>

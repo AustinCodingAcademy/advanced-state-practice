@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
  function Carousel(){
      return (
@@ -33,4 +33,3 @@ import React, { Component } from 'react';
     )
 }
 export default Carousel;
-
