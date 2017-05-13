@@ -36,10 +36,11 @@ class ProductDetail extends Component {
             </p>
           </div>
           <div className="ratings">
-            <p className="pull-right">15 reviews</p>
+
             <Review
+              numReview={this.numberOfReviews}
               showReview={this.state.showReview}
-              toggleReview={()=> {
+              toggleReview={() => {
                 this.toggleReview();
               }}
               product={this.props.product} />

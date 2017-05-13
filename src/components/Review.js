@@ -21,20 +21,21 @@ class Review extends Component {
     }); // end of return
   } // end of function
 
-
   render() {
 // console.log(this.props.product)
-      if (this.state.reviews <= 1) {
-        this.setState({
-          reviewText: "Nothing"
-        }); // turning it "true"
-      }
+    if (this.state.reviews <= 1) {
+      this.setState({
+        reviewText: "Nothing"
+      }); // turning it "true"
+    }
     return (
+      <div>
         <div onClick={this.props.toggleReview}>
-        {this.state.review} {this.state.reviewText}
-        {this.props.showReview && this.showReviewDetail()}
+          {this.state.review} {this.props.product.reviews.length} {this.state.reviewText} 
+          {this.props.showReview && this.showReviewDetail()}
+        </div>
       </div>
-    ); //end of return
+    ); // end of return
   } // end of return
 } // end of render
 

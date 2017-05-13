@@ -15,7 +15,8 @@ function App(props) {
     return (
       <ProductDetail
         product={prod}
-        key={prod.id} />
+        key={prod.id}
+        />
     );
 
   });
