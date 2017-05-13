@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
  function NavBar(){
      return (<nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
