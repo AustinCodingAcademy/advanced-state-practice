@@ -1,11 +1,12 @@
-import React from "react";
+import React, {Component} from "react";
 
-class Reviews extends React.Component {
+
+class Reviews extends Component {
   constructor() {
     super();
     this.state = {visible: true};
   }
-  render(props) {
+  render() {
     let reviewList = "";
     if (this.state.visible) {
       reviewList = this.props.reviews.map((review) => {
