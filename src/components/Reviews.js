@@ -6,6 +6,15 @@ class Reviews extends React.Component{
     this.state = {
       visible: false,
     };
+    this.handleReviewClick = this.handleReviewClick.bind(this);
+  }
+
+  handleReviewClick() {
+    this.setState(function(prevState) {
+      return {
+        visible: !prevState.visible
+      }
+    });
   }
 
   render() {
@@ -20,15 +29,13 @@ class Reviews extends React.Component{
           </div>
         )
       }
-
     });
-    return (
 
-        <div>
+    return (
+        <div onClick={this.handleReviewClick}>
           {numOfReviews} review{numOfReviews <= 1 ? " " : "s" }
           <div>{reviewDiv}</div>
         </div>
-
     );
   }
 }
