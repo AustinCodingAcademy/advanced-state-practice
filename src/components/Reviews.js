@@ -5,36 +5,39 @@ class Reviews extends React.Component{
     super(props);
     this.state = {
       visible: false,
-    }
+    };
+    this.handleReviewClick = this.handleReviewClick.bind(this);
   }
-// Default to hidden, changing state below to effect change when toggled
-  toggleHide() {
-    this.setState({visible: !this.state.visible});
+
+  handleReviewClick() {
+    this.setState(function(prevState) {
+      return {
+        visible: !prevState.visible
+      }
+    });
   }
 
   render() {
-    let plural = "";
-    if (this.props.product.reviews.length > 1) {
-      plural = "s";
-    }
-    const reviewsDiv = this.props.product.reviews.map((review) => {
-      return (
-        <div>
-          <p>Rating: {review.rating}</p>
-        </div>
-      )
-    }
-  );
-return (
-  <div>
-    <div className="pull-right" onClick={() => {
-      this.toggleHide()
-    }}>{this.props.product.reviews.length} review{plural}</div>
+    let reviews = this.props.product;
+    let numOfReviews = reviews.length;
 
-  {this.state.hidden ? <div /> : reviewsDiv }
-  </div>
-    )
+    const reviewDiv = reviews.map((review) => {
+      if(this.state.visible) {
+        return (
+          <div>
+          <p>{review.description} {review.rating}</p>
+          </div>
+        )
+      }
+    });
+
+    return (
+      <div onClick={this.handleReviewClick}>
+      {numOfReviews} review{numOfReviews <= 1 ? " " : "s" }
+      <div>{reviewDiv}</div>
+      </div>
+      );
+    }
   }
-}
 
 export default Reviews;

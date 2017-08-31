@@ -21,7 +21,7 @@ function ProductDetail(props) {
         </div>
         <div className="ratings">
           <p className="pull-right"></p>
-          <Reviews product={props.product} reviews={reviews}/>
+          <Reviews product={props.product.reviews}/>
           <p>
             {stars}
           </p>
