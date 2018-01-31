@@ -34,11 +34,61 @@ body {
     width: 100%;
 }
 
-.ratings {
-    padding-right: 10px;
-    padding-left: 10px;
+/* ------- Ratings: ------- */
+
+.ratings { 
+    position: relative;
+    padding: 0 20px;
     color: #d17581;
 }
+
+    .ratings::after {
+        content: " ";
+        display: block; 
+        height: 0; 
+        clear: both;        
+    }
+
+    .ratings .stars {
+        position: absolute;
+        top: 0;
+        left: 20px;
+    }
+
+    .ratings .print { 
+        float: right;
+        cursor: pointer;
+    }
+
+/* ------- Reviews: ------- */
+
+.reviews { position: relative; }
+
+    .reviews ul { 
+        font-size: 12px;
+        position: absolute;
+        z-index: 1;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    }
+
+    .reviews ul.visible-reviews {
+        visibility: visible;
+        opacity: 1;
+        top: 40px;
+        transition: visibility 0.3s, opacity 0.3s, top 0.3s;
+    }
+
+    .reviews ul.hidden-reviews {
+        visibility: hidden;
+        opacity: 0;
+        top: 30px;
+        transition: visibility 0.3s, opacity 0.3s, top 0.3s;
+    }
+
+    .reviews li {
+        text-align: left;
+        color: #999;
+    }
 
 .thumbnail {
     padding: 0;
