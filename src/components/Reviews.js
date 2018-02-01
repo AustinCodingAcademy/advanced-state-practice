@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Stars from './Stars';
 
 class Reviews extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class Reviews extends React.Component {
 
                 <ul className={`list-group ${this.state.visible}`}>
                     {this.props.product.reviews.map( function(review, i){
-                        return <li key={i} className="list-group-item">{review.description}</li>
+                        return <li key={i} className="list-group-item"><span>{review.description}</span><Stars rating={review.rating} /></li>
                     })}
                 </ul>
             </div>
