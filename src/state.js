@@ -10,7 +10,7 @@ export default {
     "price": "$95.11",
     "category": "food",
     "reviews": [{
-      "description": "architect revolutionary deliverables",
+      "description": "Aarchitect revolutionary deliverables",
       "rating": 2
     }, {
       "description": "orchestrate dynamic schemas",
@@ -50,7 +50,7 @@ export default {
     "price": "$37.09",
     "category": "food",
     "reviews": [{
-      "description": "architect revolutionary deliverables",
+      "description": "Barchitect revolutionary deliverables",
       "rating": 2
     }, {
       "description": "orchestrate dynamic schemas",
@@ -76,7 +76,7 @@ export default {
     "price": "$51.83",
     "category": "food",
      "reviews": [{
-      "description": "architect revolutionary deliverables",
+      "description": "Carchitect revolutionary deliverables",
       "rating": 2
     }, {
       "description": "orchestrate dynamic schemas",
