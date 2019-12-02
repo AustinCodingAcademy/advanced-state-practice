@@ -1,10 +1,15 @@
 import React from "react";
+import Reviews from "./Reviews";
 
 function ProductDetail(props) {
-  const {name,description,rating,imgUrl} = props.product;
+  const {name,description,rating,imgUrl,reviews} = props.product;
   const stars = [];
   for (let i = 0; i < rating; i++) {
     stars.push(<span className="glyphicon glyphicon-star" />);
+  }
+
+  function toggle() {
+    this.setState({isShown: !this.state.isShown});
   }
 
   return (
@@ -14,7 +19,7 @@ function ProductDetail(props) {
         <div className="caption">
           <h4><a href="#">{name}</a>
           </h4>
-          <p>{description} 
+          <p>{description}
           </p>
         </div>
         <div className="ratings">
@@ -23,6 +28,7 @@ function ProductDetail(props) {
             {stars}
           </p>
         </div>
+        <Reviews reviews={reviews} toggle={toggle} />
       </div>
     </div>
   );
